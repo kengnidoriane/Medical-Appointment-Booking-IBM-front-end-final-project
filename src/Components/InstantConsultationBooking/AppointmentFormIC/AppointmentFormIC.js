@@ -35,6 +35,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
             id="phoneNumber"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
+            maxLength={10}
             required
           />
         </div>
