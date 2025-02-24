@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"; // Importing the Link component from re
 import "./LandingPage.css"; // Importing the CSS styles for the Landing_Page component
 
 // Defining the Function component Landing_Page
-const Landing_Page = () => {
+const LandingPage = () => {
   return (
     <section className="hero-section"> {/* Creating a section with class name 'hero-section' */}
       <div>
@@ -33,4 +33,4 @@ const Landing_Page = () => {
   );
 };
 
-export default Landing_Page; // Exporting the Landing_Page component to be used in other parts of the application
+export default LandingPage; // Exporting the Landing_Page component to be used in other parts of the application
