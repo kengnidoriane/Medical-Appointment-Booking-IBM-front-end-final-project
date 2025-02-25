@@ -83,8 +83,8 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
                 required>
                 <option value=''></option>
                 {
-                    timeSlots.map((slot, index) => (
-                        <option>
+                    timeSlots.map((slot) => (
+                        <option key={slot} value={slot}>
                             {slot}
                         </option>
                     ))
