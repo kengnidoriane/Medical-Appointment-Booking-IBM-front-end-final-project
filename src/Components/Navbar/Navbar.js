@@ -71,7 +71,7 @@ const handleWelcomeClick = () => {
           <Link to="#">Reviews</Link>
         </li>
         { token? (<div className='group__button'>
-                    <li><p>Welcome, {name}</p>
+                    <li><p onClick={handleWelcomeClick}>Welcome, {name}</p>
                         {showProfileCard && (
                           <div className='profile-card'>
                             <Link to='/profile'>

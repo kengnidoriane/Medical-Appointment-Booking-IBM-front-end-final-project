@@ -1,0 +1,74 @@
+/* Conteneur principal */
+.reports-layout {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Titre */
+  .reports-layout h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  /* Tableau */
+  .reports-layout table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* En-tête du tableau */
+  .reports-layout th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  /* Cellules du tableau */
+  .reports-layout td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+  
+  /* Boutons */
+  .reports-layout button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .reports-layout button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .reports-layout .view-report-btn {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .reports-layout .view-report-btn:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  
+  .reports-layout .download-report-btn {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .reports-layout .download-report-btn:hover:not(:disabled) {
+    background-color: #138496;
+  }
+  

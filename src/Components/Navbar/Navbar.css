@@ -60,7 +60,6 @@ nav {
 .nav__logo {
     font-size: 2rem;
     font-weight: 600;
-    /* color: #0d213f; */
     cursor: pointer;
 }
 
@@ -80,7 +79,6 @@ nav {
     align-items: center;
     gap: 1rem;
     font-size: .9rem;
-    /* font-weight: 500; */
 }
 /* Styles pour les liens individuels dans la navigation */
 .link a {
