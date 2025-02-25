@@ -168,3 +168,29 @@ nav {
     background-color:#3685fb; /* Effet de survol */
     color:white; /* Effet de survol */
 }
+
+
+/* Carte de profil */
+.profile-card {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  .profile-card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .profile-card p:hover {
+    color: #007bff;
+  }
+  

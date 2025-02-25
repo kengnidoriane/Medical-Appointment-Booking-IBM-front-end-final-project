@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
@@ -5,6 +6,8 @@ export default function Navbar() {
 
   const token = sessionStorage.getItem('auth-token');
   const emailFromSessionStorage = sessionStorage.getItem('email') || '';
+  const [showProfileCard, setShowProfileCard] = useState(false);
+
   function getUsernameFromEmail(email) {
     if (!email) {
       return null
@@ -29,7 +32,9 @@ export default function Navbar() {
   };
 
 
-
+const handleWelcomeClick = () => {
+  setShowProfileCard(!showProfileCard);
+}
 
   return (
     <nav>
@@ -66,7 +71,18 @@ export default function Navbar() {
           <Link to="#">Reviews</Link>
         </li>
         { token? (<div className='group__button'>
-                    <li><p>Welcome, {name}</p></li>
+                    <li><p>Welcome, {name}</p>
+                        {showProfileCard && (
+                          <div className='profile-card'>
+                            <Link to='/profile'>
+                              <p>Your profile</p>
+                            </Link>
+                            <Link to='/reports'>
+                              <p>Your reports</p>
+                            </Link>
+                          </div>
+                        )}
+                    </li>
                     <li><button onClick={handleClickLoggout}>
                           logout
                         </button>
