@@ -1,0 +1,103 @@
+.profile-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-card-welcome {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-card-info {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .profile-card-edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-card-edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .profile-card-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-card-popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .profile-card-popup-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .profile-card-popup-field {
+    margin-bottom: 15px;
+  }
+  
+  .profile-card-popup-field label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .profile-card-popup-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile-card-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .profile-card-popup-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-card-popup-buttons button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .profile-card-popup-buttons button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .profile-card-popup-buttons button[type="button"] {
+    background-color: #ccc;
+  }
+  
+  .profile-card-popup-buttons button[type="button"]:hover {
+    background-color: #999;
+  }
+  

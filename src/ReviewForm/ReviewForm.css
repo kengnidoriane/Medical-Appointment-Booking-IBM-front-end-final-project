@@ -1,0 +1,130 @@
+/* Conteneur principal */
+.review-form-container {
+    padding: 1rem;
+  }
+  
+  /* Titre */
+  .review-form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Tableau */
+  .review-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d1d5db;
+  }
+  
+  /* En-tête du tableau */
+  .review-table thead {
+    background-color: #e5e7eb;
+  }
+  
+  .review-table th,
+  .review-table td {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    text-align: center;
+  }
+  
+  /* Lignes du tableau */
+  .review-table tbody tr:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* Bouton Give Review */
+  .give-review-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .give-review-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .give-review-button:disabled {
+    background-color: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+  }
+  
+  /* Formulaire popup */
+  .review-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .review-popup {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 24rem;
+  }
+  
+  .review-popup-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .review-popup-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .review-popup-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    resize: vertical;
+    min-height: 6rem;
+  }
+  
+  .review-popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .review-popup-cancel-button {
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .review-popup-cancel-button:hover {
+    background-color: #d1d5db;
+  }
+  
+  .review-popup-submit-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .review-popup-submit-button:hover {
+    background-color: #2563eb;
+  }
+  
