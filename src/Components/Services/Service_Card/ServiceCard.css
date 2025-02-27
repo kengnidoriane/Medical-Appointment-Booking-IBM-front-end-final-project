@@ -1,0 +1,23 @@
+.service-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .service-card-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .service-card-title {
+    padding: 16px;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  

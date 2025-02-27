@@ -68,7 +68,7 @@ const handleWelcomeClick = () => {
           <Link to="#">Health Blog</Link>
         </li>
         <li className="link">
-          <Link to="#">Reviews</Link>
+          <Link to="/reviews">Reviews</Link>
         </li>
         { token? (<div className='group__button'>
                     <li><p onClick={handleWelcomeClick}>Welcome, {name}</p>
