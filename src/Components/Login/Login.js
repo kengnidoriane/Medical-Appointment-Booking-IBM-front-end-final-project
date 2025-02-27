@@ -1,12 +1,8 @@
-// Following code has been commented with appropriate comments for your reference.
 import { useState, useEffect } from 'react';
-// Apply CSS according to your design theme or the CSS provided in week 2 lab 2
-
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
 
 const Login = () => {
-
   // State variables for email and password
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState('');
@@ -19,11 +15,14 @@ const Login = () => {
     if (sessionStorage.getItem("auth-token")) {
       navigate("/");
     }
-  }, []);
+  }, [navigate]); // Ajout de navigate comme dépendance
 
   // Function to handle login form submission
   const login = async (e) => {
     e.preventDefault();
+    console.log("Email:", email);
+    console.log("Password:", password);
+
     // Send a POST request to the login API endpoint
     const res = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
@@ -38,14 +37,16 @@ const Login = () => {
 
     // Parse the response JSON
     const json = await res.json();
+    console.log("Response:", json);
+
     if (json.authtoken) {
       // If authentication token is received, store it in session storage
       sessionStorage.setItem('auth-token', json.authtoken);
       sessionStorage.setItem('email', email);
 
-      // Redirect to home page and reload the window
+      // Redirect to home page
       navigate('/');
-      window.location.reload();
+      window.location.reload(); // Cela peut être évité si vous gérez l'état avec React
     } else {
       // Handle errors if authentication fails
       if (json.errors) {
@@ -81,7 +82,7 @@ const Login = () => {
                 {/* Input field for email */}
                 <input
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)} 
+                  onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   name="email"
                   id="email"
@@ -92,10 +93,9 @@ const Login = () => {
               </div>
               {/* Input field for password */}
               <div className="form-group">
-                <label htmlFor="password">password</label>
-                {/* Input field for email */}
+                <label htmlFor="password">Password</label>
                 <input
-                  value={email}
+                  value={password} // Correction ici : cela doit être `password`, pas `email`
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   name="password"
@@ -105,12 +105,8 @@ const Login = () => {
                   aria-describedby="helpId"
                 />
               </div>
-               {/* write logic code for password input box */}
               <div className="btn-group">
                 {/* Login button */}
-                {/* <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">
-                  Login
-                </button> */}
                 <button type="submit">Login</button>
               </div>
             </form>
@@ -118,7 +114,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Login;
