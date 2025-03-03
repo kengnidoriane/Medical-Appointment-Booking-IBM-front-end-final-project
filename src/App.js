@@ -10,6 +10,7 @@ import Notification from './Components/Notification/Notification';
 import ReviewForm from './ReviewForm/ReviewForm';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 import Service from './Components/Services/Service';
+import ProfileForm from './Components/ProfileCard/ProfileCard';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/services' element={<Service />} />
           <Route path='/reviews' element={<ReviewForm />} />
           <Route path='/reports' element={<ReportsLayout />} />
+          <Route path='/profile' element={<ProfileForm />} />
         </Routes>
       </BrowserRouter>
     </div>
