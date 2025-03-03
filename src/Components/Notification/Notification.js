@@ -43,10 +43,10 @@ const Notification = () => {
               <strong>Doctor:</strong> {appointmentData.doctorName}
             </p>
             <p className="notification-message">
-              <strong>Speciality:</strong> doctor
+              <strong>Speciality:</strong> {appointmentData.doctorSpeciality}
             </p>
             <p className="notification-message">
-              <strong>Patient:</strong> {appointmentData.name}
+              <strong>Patient Name:</strong> {appointmentData.name}
             </p>
             <p className="notification-message">
               <strong>Phone Number:</strong> {appointmentData.phoneNumber}
@@ -55,7 +55,7 @@ const Notification = () => {
               <strong>Date:</strong> {appointmentData.date}
             </p>
             <p className="notification-message">
-              <strong>Time:</strong> {appointmentData.time}
+              <strong>Time Slot:</strong> {appointmentData.selectedSlot}
             </p>
           </div>
         </div>

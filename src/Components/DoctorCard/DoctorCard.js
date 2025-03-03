@@ -27,6 +27,8 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
       doctorSpeciality: speciality,
       ...appointmentData,
     };
+    console.log('newAppointment:', newAppointment);
+    
     const updatedAppointments = [...appointments, newAppointment];
     setAppointments(updatedAppointments);
     localStorage.setItem('appointments', JSON.stringify(updatedAppointments))

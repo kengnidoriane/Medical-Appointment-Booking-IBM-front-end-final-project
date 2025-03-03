@@ -81,7 +81,7 @@ const ReviewForm = () => {
       {selectedAppointmentId && (
         <div className="review-popup-overlay">
           <div className="review-popup">
-            <h3 className="review-popup-title">Give Your Feedback</h3>
+            <h3 className="review-popup-title">Give Your Review</h3>
             <input
               type="text"
               placeholder="Your Name"
