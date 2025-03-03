@@ -7,9 +7,13 @@ const Notification = () => {
 
   // Effet pour récupérer les données du rendez-vous depuis localStorage
   useEffect(() => {
-    const storedAppointmentData = JSON.parse(localStorage.getItem('appointmentData'));
+    const storedAppointmentData = JSON.parse(localStorage.getItem('appointments'));
+    console.log('Appointmentdata:',storedAppointmentData);
+    
     if (storedAppointmentData) {
       setAppointmentData(storedAppointmentData);
+    console.log('Appointmentdata:',storedAppointmentData);
+
       setShowNotification(true);
     }
   }, []);
@@ -17,7 +21,7 @@ const Notification = () => {
   // Effet pour écouter les changements dans localStorage
   useEffect(() => {
     const handleStorageChange = () => {
-      const storedAppointmentData = JSON.parse(localStorage.getItem('appointmentData'));
+      const storedAppointmentData = JSON.parse(localStorage.getItem('appointments'));
       if (!storedAppointmentData) {
         setAppointmentData(null);
         setShowNotification(false);
