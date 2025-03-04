@@ -14,11 +14,19 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     setShowModal(true);
   };
 
+
+
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
     setAppointments(updatedAppointments);
     localStorage.removeItem('appointmentData');
   };
+
+      // // Récupérer les rendez-vous stockés lors du montage du composant
+    useEffect(() => {
+      const getAppointments = JSON.parse(localStorage.getItem('appointments'));
+      setAppointments(getAppointments);
+    }, [appointments]);
 
   const handleFormSubmit = (appointmentData) => {
     const newAppointment = {
@@ -33,7 +41,8 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     setAppointments(updatedAppointments);
     localStorage.setItem('appointments', JSON.stringify(updatedAppointments))
     setShowModal(false);
-  };
+    console.log('appoitment.length', appointments.length)
+  }
 
   return (
     <div className="doctor-card-container">
@@ -103,7 +112,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
               )}
             </div>
           )}
-        </Popup> 
+        </Popup>
       </div>
     </div>
   );
