@@ -1,4 +1,3 @@
-// Following code has been commented with appropriate comments for your reference.
 import { useState } from 'react';
 import './Sign_Up.css'
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,12 +12,25 @@ const Sign_Up = () => {
     const [role, setRole] = useState("patient" || "doctor");
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState(''); // State to show error messages
+    const [phoneError, setPhoneError] = useState(''); // State for phone validation error
     const navigate = useNavigate(); // Navigation hook from react-router
+
+    // Function to validate phone number
+    const validatePhone = (phone) => {
+        const phoneRegex = /^\d{10}$/;
+        return phoneRegex.test(phone);
+    };
 
     // Function to handle form submission
     const register = async (e) => {
         e.preventDefault(); // Prevent default form submission
-
+        // Validate phone number
+        if (!validatePhone(phone)) {
+            setPhoneError('The phone numbre must contain exactly 10 numbers.');
+            return;
+        } else {
+            setPhoneError('');
+        }
         // API Call to register user
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
@@ -108,6 +120,7 @@ const Sign_Up = () => {
                               maxLength="10"
                               aria-describedby="helpId"
                             />
+                            {phoneError && <div className="err" style={{ color: 'red' }}>{phoneError}</div>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
@@ -122,7 +135,6 @@ const Sign_Up = () => {
                               aria-describedby="helpId"
                             />
                         </div>
-                        {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                         <div className='btn-group'>
                           <button type="submit">Submit</button>
                           <button type="reset" >Reset</button>
@@ -133,7 +145,6 @@ const Sign_Up = () => {
                 </div>
             </div>
         </div>
-        /* Note: Sign up role is not stored in the database. Additional logic can be implemented for this based on your React code. */
     );
 }
 
