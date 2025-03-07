@@ -25,6 +25,8 @@ export default function ReportsLayout() {
       link.href = reportUrl;
       link.download = 'report.pdf'; // Nom du fichier à télécharger
       link.click();
+    } else {
+      alert('No report available to download')
     }
   };
 
