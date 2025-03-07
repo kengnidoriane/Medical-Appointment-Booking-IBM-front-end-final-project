@@ -31,6 +31,10 @@ const Sign_Up = () => {
         } else {
             setPhoneError('');
         }
+        if(!email) {
+            setShowerr('email is required')
+        }
+        
         // API Call to register user
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
