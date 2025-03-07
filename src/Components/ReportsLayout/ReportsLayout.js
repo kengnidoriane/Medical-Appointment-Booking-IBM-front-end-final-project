@@ -4,7 +4,7 @@ import { Eye, Download } from 'lucide-react'; // Icônes pour les boutons
 
 export default function ReportsLayout() {
   const [appointments, setAppointments] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(true);
   // Récupérer les rendez-vous depuis le localStorage au montage du composant
   useEffect(() => {
     const storedAppointments = JSON.parse(localStorage.getItem('appointments')) || [];

@@ -10,6 +10,15 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
 
+
+  // Charger les rendez-vous existants au chargement du composant
+  useEffect(() => {
+    const storedAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    // Filtrer les rendez-vous pour ce docteur spécifique
+    const doctorAppointments = storedAppointments.filter(apt => apt.doctorName === name);
+    setAppointments(doctorAppointments);
+  }, [name]);
+
   const handleBooking = () => {
     setShowModal(true);
   };
@@ -17,16 +26,16 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
 
 
   const handleCancel = (appointmentId) => {
-    const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
-    setAppointments(updatedAppointments);
-    localStorage.removeItem('appointmentData');
+    // Récupérer tous les rendez-vous
+    const allAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    // Filtrer pour enlever le rendez-vous annulé
+    const updatedAllAppointments = allAppointments.filter(apt => apt.id !== appointmentId);
+    // Mettre à jour le localStorage
+    localStorage.setItem('appointments', JSON.stringify(updatedAllAppointments));
+    // Mettre à jour l'état local avec les rendez-vous de ce docteur
+    const updatedDoctorAppointments = updatedAllAppointments.filter(apt => apt.doctorName === name);
+    setAppointments(updatedDoctorAppointments);
   };
-
-      // // Récupérer les rendez-vous stockés lors du montage du composant
-    useEffect(() => {
-      const getAppointments = JSON.parse(localStorage.getItem('appointments'));
-      setAppointments(getAppointments);
-    }, [appointments]);
 
   const handleFormSubmit = (appointmentData) => {
     const newAppointment = {
@@ -35,14 +44,18 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
       doctorSpeciality: speciality,
       ...appointmentData,
     };
+
     console.log('newAppointment:', newAppointment);
-    
-    const updatedAppointments = [...appointments, newAppointment];
-    setAppointments(updatedAppointments);
-    localStorage.setItem('appointments', JSON.stringify(updatedAppointments))
+    const existingAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    const updatedAllAppointments = [...existingAppointments, newAppointment];
+    localStorage.setItem('appointments', JSON.stringify(updatedAllAppointments));
+    setAppointments(prev => [...prev, newAppointment]);
     setShowModal(false);
-    console.log('appoitment.length', appointments.length)
+
+
   }
+
+
 
   return (
     <div className="doctor-card-container">

@@ -4,9 +4,7 @@ import StarRating from './star-rating';
 
 
 const ReviewForm = () => {
-  // Clé utilisée pour stocker les rendez-vous dans le localStorage
   const APPOINTMENTS_KEY = 'appointments';
-  // Récupérer les rendez-vous depuis le localStorage
   const getAppointmentsFromLocalStorage = () => {
     const storedAppointments = localStorage.getItem(APPOINTMENTS_KEY);
     return storedAppointments ? JSON.parse(storedAppointments) : [];
@@ -17,7 +15,6 @@ const ReviewForm = () => {
   const [reviewText, setReviewText] = useState('');
   const [updatedAppointments, setUpdatedAppointments] = useState(getAppointmentsFromLocalStorage());
 
-  // Sauvegarder les rendez-vous dans le localStorage à chaque mise à jour
   useEffect(() => {
     localStorage.setItem(APPOINTMENTS_KEY, JSON.stringify(updatedAppointments));
   }, [updatedAppointments]);
